@@ -1,0 +1,62 @@
+[System]
+Name='1mamdanipr'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=7
+AndMethod='min'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='max'
+DefuzzMethod='mom'
+
+[Input1]
+Name='features1'
+Range=[3000 15500]
+NumMFs=3
+MF1='low':'gauss2mf',[696.2 4779 696.2 5827]
+MF2='medium':'gauss2mf',[685.7 8528 737.2 8947]
+MF3='high':'gauss2mf',[1195 12150 1019 12800]
+
+[Input2]
+Name='features2'
+Range=[6050 34000]
+NumMFs=3
+MF1='low':'gaussmf',[1251 8756]
+MF2='medium':'gauss2mf',[1284 12620 1815 13530]
+MF3='high':'gauss2mf',[1222 19240 4893 21040]
+
+[Input3]
+Name='features3'
+Range=[3000 16500]
+NumMFs=3
+MF1='low':'gauss2mf',[716 4897 663.3 5303]
+MF2='medium':'gauss2mf',[533.4 7323 963.1 7763]
+MF3='high':'gauss2mf',[1189 11650 1529 12450]
+
+[Input4]
+Name='features4'
+Range=[5300 71100]
+NumMFs=3
+MF1='low':'gauss2mf',[2616 12230 3839 14130]
+MF2='medium':'gauss2mf',[3431 27090 4093 29300]
+MF3='high':'gauss2mf',[5436 48400 7168 52110]
+
+[Output1]
+Name='posizione'
+Range=[0 5]
+NumMFs=4
+MF1='dorsi':'trimf',[0 1 2]
+MF2='supina':'trimf',[2 3 4]
+MF3='cammin':'trimf',[3 4 5]
+MF4='scale':'trimf',[1 2 3]
+
+[Rules]
+1 1 1 1, 1 (0.4) : 1
+1 2 1 2, 4 (0.4) : 1
+2 1 2 1, 2 (0.4) : 1
+1 1 2 2, 3 (1) : 1
+2 2 2 1, 1 (1) : 1
+2 2 2 2, 4 (1) : 1
+1 1 2 1, 3 (1) : 1
