@@ -1,6 +1,6 @@
 #############################################
 # IS                                        #
-# Project for course of Intelligent Systems #
+# Project for Intelligent Systems course    #
 #                                           #
 # Academic code for academic purposes only. #
 #############################################
